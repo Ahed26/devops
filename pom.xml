@@ -8,41 +8,45 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.4</version>
-        <relativePath/>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>tn.esprit.spring.services</groupId>
     <artifactId>timesheet-devops</artifactId>
     <version>1.0</version>
     <name>timesheet-devops</name>
-    <description>tp-spring-jsf-crud</description>
+    <description>tp spring jsf crud</description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- LA LIGNE MAGIQUE : exclusion de JUnit 4 pour forcer JUnit 5 -->
+        <!-- LA DÉPENDANCE QUI RÉSOUT TOUT : JUnit 5 au lieu de JUnit 4 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -54,8 +58,10 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
     </dependencies>
 
+    <!-- Déploiement Nexus (tu peux le garder) -->
     <distributionManagement>
         <repository>
             <id>deploymentRepo</id>
@@ -72,4 +78,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
